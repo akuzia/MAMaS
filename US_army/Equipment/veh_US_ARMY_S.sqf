@@ -1,0 +1,175 @@
+_veh = _this select 0;
+_loadout = toUpper (_this select 1);
+switch _loadout do {
+	case "COY" : { //
+		_veh addMagazineCargo ["SmokeShell",4];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",8];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",2];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 4];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+	};
+	case "PLT" : { //
+		_veh addMagazineCargo ["HandGrenade_west",4];
+		_veh addMagazineCargo ["SmokeShell",4];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",10];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",2];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 4];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["M136",1];
+	};
+	case "HMW" : { //
+		_veh addMagazineCargo ["HandGrenade_west",10];
+		_veh addMagazineCargo ["SmokeShell",5];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
+		_veh addMagazineCargo ["ACE_200Rnd_556x45_T_M249",3];
+		_veh addMagazineCargo ["1Rnd_HE_M203",5];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4]
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2]
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["M136",2];
+	};
+	case "TRUCK" : { //
+		_veh addMagazineCargo ["HandGrenade_west",16];
+		_veh addMagazineCargo ["SmokeShell",8];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",26];
+		_veh addMagazineCargo ["100Rnd_556x45_M249",10];
+		_veh addMagazineCargo ["1Rnd_HE_M203",16];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",8];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",5];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 8];
+		_veh addMagazineCargo ["ACE_Morphine",8];
+		_veh addMagazineCargo ["ACE_Epinephrine",8];
+		_veh addMagazineCargo ["ACE_Bandage",10];
+		_veh addWeaponCargo ["M136",4];
+		[_veh,"FIM92"] call SerP_cargoCrateProcessor;
+	};
+	case "MG" : { //
+		_veh addMagazineCargo ["HandGrenade_west",10];
+		_veh addMagazineCargo ["SmokeShell",8];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
+		_veh addMagazineCargo ["100Rnd_762x51_M240",12];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",2];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+		_veh addMagazineCargo ["ACE_Morphine",8];
+		_veh addMagazineCargo ["ACE_Epinephrine",8];
+		_veh addMagazineCargo ["ACE_Bandage",10];
+		_veh addWeaponCargo ["M136",2];
+		_veh addWeaponCargo ["ACE_M122TripodProxy",2];
+	};
+	case "TRUCK_MORTAR" : { //
+		_veh addMagazineCargo ["HandGrenade_west",5];
+		_veh addMagazineCargo ["SmokeShell",5];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",20];
+		_veh addMagazineCargo ["ACE_200Rnd_556x45_T_M249",5];
+		_veh addMagazineCargo ["1Rnd_HE_M203",10];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",4];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+		_veh addMagazineCargo ["ACE_Morphine",9];
+		_veh addMagazineCargo ["ACE_Epinephrine",9];
+		_veh addMagazineCargo ["ACE_Bandage",9];
+		_veh addWeaponCargo ["M136",1];
+		_veh addWeaponCargo ["ACE_M252Proxy",1];
+		_veh addWeaponCargo ["ACE_M252TripodProxy",1];
+		_veh addWeaponCargo ["ace_arty_rangeTable_m252_legacy",2];
+		[_veh,"81MMHE",10] call SerP_cargoCrateProcessor;
+		[_veh,"81MMWP",2] call SerP_cargoCrateProcessor;
+	};
+	case "MORTAR_120" : { //
+		_veh addMagazineCargo ["HandGrenade_west",4];
+		_veh addMagazineCargo ["SmokeShell",4];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",6];
+		_veh addWeaponCargo ["ACE_VTAC_RUSH72_ACU",1];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 2];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",4];
+		_veh addWeaponCargo ["ace_arty_rangeTable_tampella",1];
+		_veh addWeaponCargo ["ACE_Arty_AimingPost_M1A2_M58",1];
+		_veh addWeaponCargo ["ACE_Arty_AimingPost_M1A2_M59",1];
+	};
+	case "SN" : { //
+		_veh addMagazineCargo ["HandGrenade_west",5];
+		_veh addMagazineCargo ["SmokeShell",3];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",8];
+		_veh addMagazineCargo ["10Rnd_127x99_m107",4];
+		_veh addMagazineCargo ["ACE_10Rnd_127x99_Raufoss_m107",2];
+		_veh addMagazineCargo ["20Rnd_762x51_B_SCAR",6];
+		_veh addMagazineCargo ["15Rnd_9x19_M9",3];
+		_veh addMagazineCargo ["1Rnd_HE_M203",5];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",5];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 2];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["M136",1];
+		_veh addWeaponCargo ["ACE_SSVZ",1];
+		_veh addWeaponCargo ["M4A1_aim",1];
+		_veh addWeaponCargo ["M9",1];
+	};
+	case "MED" : { //
+		_veh addMagazineCargo ["ACE_Bandage",30];
+		_veh addMagazineCargo ["ACE_Morphine",20];
+		_veh addMagazineCargo ["ACE_Epinephrine",20];
+		_veh addMagazineCargo ["ACE_LargeBandage",10];
+		_veh addMagazineCargo ["ACE_Tourniquet",10];
+		_veh addMagazineCargo ["ACE_Medkit",20];
+		_veh addWeaponCargo ["ACE_Stretcher",2];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+	};
+	case "MGS" : { //
+		_veh addMagazineCargo ["SmokeShell",4];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",4];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",1];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 1];
+		_veh addMagazineCargo ["ACE_Morphine",3];
+		_veh addMagazineCargo ["ACE_Epinephrine",3];
+		_veh addMagazineCargo ["ACE_Bandage",4];
+	};
+	case "HMW_S" : { //
+		_veh addMagazineCargo ["HandGrenade_west",8];
+		_veh addMagazineCargo ["SmokeShell",4];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",14];
+		_veh addMagazineCargo ["100Rnd_762x51_M240",4];
+		_veh addMagazineCargo ["1Rnd_HE_M203",6];
+		_veh addMagazineCargo ["1Rnd_Smoke_M203",3];
+		_veh addWeaponCargo ["ACE_VTAC_RUSH72_ACU",3];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 4];
+		_veh addMagazineCargo ["ACE_Morphine",3];
+		_veh addMagazineCargo ["ACE_Epinephrine",3];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["ACE_GlassesGasMask_US",5];
+		_veh addWeaponCargo ["M136",1];
+		_veh addWeaponCargo ["ACE_Javelin_Direct",1];
+		_veh addWeaponCargo ["ACE_Javelin_CLU",1];
+		_veh addMagazineCargo ["Laserbatteries",2];
+		_veh addWeaponCargo ["Laserdesignator",1];
+	};
+	case "HWMAS" : { //
+		_veh addMagazineCargo ["HandGrenade_west",20];
+		_veh addMagazineCargo ["SmokeShell",5];
+		_veh addMagazineCargo ["30Rnd_556x45_Stanag",15];
+		_veh addMagazineCargo ["MAAWS_HEDP",3];
+		_veh addMagazineCargo ["MAAWS_HEAT",3];
+		_veh addMagazineCargo ["ACE_MAAWS_HE",3];
+		_veh addMagazineCargo ["ACE_ANM14",2];
+		_veh addWeaponCargo ["ACE_PRC119_ACU",1];
+		_veh addWeaponCargo ["ACE_Rucksack_MOLLE_ACU",4];
+		_veh addMagazineCargo ["ACE_30Rnd_556x45_T_Stanag", 5];
+		_veh addMagazineCargo ["ACE_Morphine",2];
+		_veh addMagazineCargo ["ACE_Epinephrine",2];
+		_veh addMagazineCargo ["ACE_Bandage",5];
+		_veh addWeaponCargo ["M136",4];
+	};
+
+	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
+};
