@@ -1,0 +1,20 @@
+#include "MAMaS\header.hpp"
+
+class MAMaS_const {
+	#include "const.hpp"
+};
+
+class MAMaS {
+	class EventHandlers {
+		#include "eventHandlers.hpp"
+	};
+};
+
+class Params {
+	#include "MAMaS\params_default.hpp"
+	//здесь можно описать дополнительные параметры игры
+};
+
+class RscTitles {
+	#include "Dialogs\rsc_counter.hpp"
+};
