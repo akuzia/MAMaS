@@ -14,7 +14,7 @@ class briefing_mode {
 	title = "$STR_briefing_mode";
 	values[] = {0,1,2,3,4,5};
 	texts[] = {$STR_briefing_mode_Option0,$STR_briefing_mode_Option1,$STR_briefing_mode_Option2,$STR_briefing_mode_Option3,$STR_briefing_mode_Option4,$STR_briefing_mode_Option5};
-	default = 3;
+	default = 5;
 };
 class loading {
 	title = "$STR_MAMaS_loading";
