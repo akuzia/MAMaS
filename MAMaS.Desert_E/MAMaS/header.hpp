@@ -11,7 +11,7 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
-MAMaS_version = 39;
+MAMaS_version = 40;
 MAMaS_edition = "Synergy";
 respawn = 1;
 respawndelay = 3;
