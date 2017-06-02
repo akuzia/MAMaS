@@ -33,44 +33,43 @@ if (time<300) then {//time will be automatically synchronised during JIP
 		};
 		default	{};
 	};
+	
+	switch (_weather) do	{
+		// Clear
+		case 0: {
+			_MissionOvercast = 00.00;
+			_MissionFog = 00.00;
+			0 setOvercast _MissionOvercast;
+			0 setFog _MissionFog;
+		};
+		// Overcast
+		case 1: {
+			_MissionOvercast = 00.60;
+			_MissionFog = 00.10;
+			0 setOvercast _MissionOvercast;
+			0 setFog _MissionFog;
+		};
+		// Light Fog
+		case 2: {
+			_MissionOvercast = 00.60;
+			_MissionFog = 00.20;
+			0 setOvercast _MissionOvercast;
+			0 setFog _MissionFog;
+		};
+		// Heavy Fog
+		case 3: {
+			_MissionOvercast = 00.60;
+			_MissionFog = 00.30;
+			0 setOvercast _MissionOvercast;
+			0 setFog _MissionFog;
+		};
+		// Storm
+		case 4: {
+			_MissionOvercast = 01.00;
+			_MissionFog = 00.20;
+			0 setOvercast _MissionOvercast;
+			0 setFog _MissionFog;
+		};
+		default {};
+	};
 };
-switch (_weather) do	{
-// Clear
-	case 0: {
-		_MissionOvercast = 00.00;
-		_MissionFog = 00.00;
-		0 setOvercast _MissionOvercast;
-		0 setFog _MissionFog;
-	};
-// Overcast
-	case 1: {
-		_MissionOvercast = 00.60;
-		_MissionFog = 00.10;
-		0 setOvercast _MissionOvercast;
-		0 setFog _MissionFog;
-	};
-// Light Fog
-	case 2: {
-		_MissionOvercast = 00.60;
-		_MissionFog = 00.20;
-		0 setOvercast _MissionOvercast;
-		0 setFog _MissionFog;
-	};
-// Heavy Fog
-	case 3: {
-		_MissionOvercast = 00.60;
-		_MissionFog = 00.30;
-		0 setOvercast _MissionOvercast;
-		0 setFog _MissionFog;
-	};
-// Storm
-	case 4: {
-		_MissionOvercast = 01.00;
-		_MissionFog = 00.20;
-		0 setOvercast _MissionOvercast;
-		0 setFog _MissionFog;
-	};
-//default
-	default {};
-};
-
