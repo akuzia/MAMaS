@@ -18,7 +18,7 @@ if ((count _allModules) > 0) then {
 					_is_alive_units = true;
 				};
 			} else {
-				_module_objects SET [count _module_vehicles, _x];
+				_module_objects SET [count _module_objects, _x];
 			};
 		} forEach synchronizedObjects (_module);
 		
