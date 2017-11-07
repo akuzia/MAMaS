@@ -11,8 +11,8 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
-MAMaS_version = 40;
-MAMaS_edition = "Synergy";
+MAMaS_version = 41;
+MAMaS_edition = "Veronian";
 respawn = 1;
 respawndelay = 3;
 class Header	{

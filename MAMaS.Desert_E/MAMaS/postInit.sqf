@@ -5,6 +5,7 @@
 
 if (isServer) then {
 	diag_log "STARTING SERVER MISSION";
+	[] call compile preprocessFileLineNumbers "MAMaS\Scripts\srv_RemoveUnassignedVehicles.sqf";
 	[] call compile preprocessFilelineNumbers "MAMaS\Scripts\srv_RandomizeSpawn.sqf";
 	["PostInit", "server"] call FNC(EventHandlers);
 	[] execVM "MAMaS\startmission_server.sqf";
