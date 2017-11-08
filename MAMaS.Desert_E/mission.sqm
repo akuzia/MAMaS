@@ -80,7 +80,7 @@ class Mission
 	randomSeed=49904;
 	class Intel
 	{
-		briefingName="MAMaS v41";
+		briefingName="MAMaS v42";
 		startWeather=0.30000001;
 		forecastWeather=0.30000001;
 		year=2012;

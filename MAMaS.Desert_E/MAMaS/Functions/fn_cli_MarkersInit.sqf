@@ -118,7 +118,17 @@ _spawnZoneType = ["spawnZoneType", 0] call MAMaS_blnd_fnc_GetParam; // Get spawn
 private ["_spawnZonePos", "_spawnZoneSize"];
 
 if (_spawnZoneType == 0) then {
-	_spawnZone = call compile preprocessFileLineNumbers "MAMaS\Scripts\cli_spawnZones.sqf";
+	private "_spawnZone";
+	
+	// Check for saved spawn zone position
+	_spawnZone = PGVAR("SpawnZone", []);
+	
+	// If no spawn zone data found - get a new one and save
+	if ((count _spawnZone) == 0) then {
+		_spawnZone = call compile preprocessFileLineNumbers "MAMaS\Scripts\cli_spawnZones.sqf";
+		PSGVAR("SpawnZone", _spawnZone);
+	};
+
 	_spawnZonePos = _spawnZone select 0;
 	_spawnZoneSize = _spawnZone select 1;
 	["StartPosition", _spawnZonePos, "Start", [_spawnZoneSize, _spawnZoneSize], "", "ColorGreen", ZONEMARKER_ALPHA, "SOLID", "ELLIPSE"] call _fnc_createMarkerLocal;
