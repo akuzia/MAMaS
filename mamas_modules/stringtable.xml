@@ -6,11 +6,15 @@
 				<English>[MAMaS] Random spawn</English>
 				<Russian>[MAMaS] Случайное возрождение</Russian>
 			</Key>
-		</Container>
-		<Container name="Respawn">
 			<Key ID="STR_MAMAS_MODULE_REMOVEUNASSIGNEDVEHICLES_NAME">
 				<English>[MAMaS] Remove unassigned vehicles</English>
 				<Russian>[MAMaS] Удалить не приписанную технику</Russian>
+			</Key>
+		</Container>
+		<Container name="NoUnlock">
+			<Key ID="STR_MAMAS_MODULE_NOUNLOCK_NAME">
+				<English>[MAMaS] No unlock</English>
+				<Russian>[MAMaS] Запрет вскрытия замка</Russian>
 			</Key>
 		</Container>
 	</Package>

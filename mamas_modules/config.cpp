@@ -32,4 +32,15 @@ class CfgVehicles {
         picture = "\mamas_modules\data\icon_mamas_remove_veh.paa";
         vehicleClass = "Modules";
     };
+	class MAMaS_Module_NoUnlock: Logic
+	{
+		displayName = "$STR_MAMAS_MODULE_NOUNLOCK_NAME";
+		icon = "\mamas_modules\data\icon_mamas_nounlock.paa";
+		picture = "\mamas_modules\data\icon_mamas_nounlock.paa";
+		vehicleClass = "Modules";
+		class Eventhandlers
+		{
+			init = "if (isServer) then {private [""_ok""];_ok = _this execVM ""\mamas_modules\scripts\nounlock.sqf""};";
+		};
+	};
 };
