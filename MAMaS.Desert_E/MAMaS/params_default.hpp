@@ -47,3 +47,9 @@ class changeOptics {
 	texts[] = {$STR_Off,$STR_On};
 	default = 1;
 };
+class HardFreeze {
+	title = "$STR_MAMaS_HardFreeze";
+	values[] = {0,1,2,3,4,5};
+	texts[] = {$STR_Off,$STR_MAMaS_HardFreeze_1,$STR_MAMaS_HardFreeze_2,$STR_MAMaS_HardFreeze_3,$STR_MAMaS_HardFreeze_4,$STR_MAMaS_HardFreeze_5};
+	default = 1;
+};

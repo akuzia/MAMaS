@@ -1,6 +1,8 @@
 #include "Functions\blnd_macros.h"
 #include "Scripts\const.h"
 
+[] execVM "MAMaS\Scripts\srv_hardFreeze.sqf";
+
 _fnc_srv_counter = compile preprocessFileLineNumbers "MAMaS\Functions\fn_Srv_Counter.sqf";
 _briefing_mode = ["briefing_mode", 1] call FNC(GetParam);
 switch (_briefing_mode) do	{

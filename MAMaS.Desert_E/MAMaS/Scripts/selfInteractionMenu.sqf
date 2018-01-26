@@ -89,21 +89,17 @@ _isBriefing = if (!isNil{warbegins}) then {warbegins==0}else{false};
 _menu = [
 	["main", "test", "popup"],
 	[
-		["End mission (ADMIN)",
+		["* End mission",
 			_endMission,
 			"", "", "", -10, 1, _isAdmin
 		],
-		["Lock",
-			{(vehicle player) lock true},
-			"", "", "", -10, 1, (local _veh) && {_veh != player && !_isCargo && !locked(_veh)}
-		],
-		["Unlock",
-			{(vehicle player) lock false},
-			"", "", "", -10, 1, (local _veh) && {_veh != player && locked(_veh)}
-		],
-		["End briefing (ADMIN)",
+		["* End briefing ",
 			_endBriefing,
 			"", "", "", -10, 1, (_isAdmin&&_isBriefing)
+		],
+		["* End Hard Freeze",
+			{VAR(HardFreezeDisabled) = true; publicVariable QUOTE(VAR(HardFreezeDisabled));},
+			"", "", "", -10, 1, _isAdmin && {!GVAR(HardFreezeDisabled,false)}
 		],
 		[localize "STR_MAMaS_end_briefing",
 			_voteEndBriefing,
@@ -112,6 +108,14 @@ _menu = [
 		[localize "STR_MAMaS_continue_briefing",
 			_voteContinueBriefing,
 			"", "", "", -10, 1, _isBriefing && (!isNil "readyArray") && (leader (group player) == player) && {_index = -1; switch (side (group player)) do { case __sideBLUEFOR: { _index = 0 }; case __sideREDFOR: { _index = 1 }; }; if (_index != -1) then { readyArray select _index } else { false }}
+		],
+		["Lock",
+			{(vehicle player) lock true},
+			"", "", "", -10, 1, (local _veh) && {_veh != player && !_isCargo && !locked(_veh)}
+		],
+		["Unlock",
+			{(vehicle player) lock false},
+			"", "", "", -10, 1, (local _veh) && {_veh != player && locked(_veh)}
 		]
 	]
 ];

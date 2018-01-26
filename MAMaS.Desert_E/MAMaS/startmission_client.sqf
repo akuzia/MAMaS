@@ -5,6 +5,7 @@
 if (missionNameSpace getVariable ["warbegins", 0] == 0) then {
 	[] call FNC(MarkersInit);
 };
+
 [] call compile preprocessFileLineNumbers "MAMaS\scripts\briefing.sqf";
 
 waitUntil {sleep 0.319; !isNil "warbegins"};
@@ -13,9 +14,11 @@ waitUntil {sleep 0.319; !isNil "warbegins"};
 waitUntil { player == player };
 
 // VARIABLES
-
 openMap [true,true];
 player enableSimulation false;
+
+// Hard Freeze (также включает симуляцию)
+[] execVM "MAMaS\Scripts\cli_hardFreeze.sqf";
 
 private ["_player", "_veh", "_vehFiredList", "_firedEHIndex", "_blocker2"];
 
@@ -62,7 +65,7 @@ if (warbegins == 0) then {
 	//// IMPORTANT SCRIPTS END
 
 	openMap [false,false];
-	_veh enableSimulation true;
+	//_veh enableSimulation true;
 	
 	[] spawn FNC(MarkersLoop);
 	[] call FNC(SetMissionConditions);
@@ -113,7 +116,7 @@ if (warbegins == 0) then {
 	if (GVAR(MARKERS_STARTED,false)) then { [] spawn FNC(MarkersLoop) };
 	[""] call FNC(Status);
 	openMap [false,false];
-	_veh enableSimulation true;
+	//_veh enableSimulation true;
 };
 
 ace_sys_map_enabled = true;
