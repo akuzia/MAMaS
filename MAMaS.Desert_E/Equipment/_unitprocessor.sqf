@@ -2,9 +2,10 @@ _unit = _this select 0;
 _faction = if (count(_this)>1) then {_this select 1}else{""};
 _loadout = if (count(_this)>2) then {toUpper(_this select 2)}else{""};
 _AI_processor = {
-	_this setBehaviour "CARELESS";
+	_this setBehaviour "SAFE";
 	_this allowFleeing 0;
 	_this disableAI "AUTOTARGET";
+	_this disableAI "ANIM";
 	_this disableAI "PATHPLAN";
 	//_this setCombatMode "BLUE";
 	_this doWatch objNull;
