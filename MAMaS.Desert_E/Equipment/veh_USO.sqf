@@ -100,5 +100,5 @@ switch _loadout do {
 		_veh addMagazineCargo ["ACE_Bandage",5];
 		_veh addWeaponCargo ["ACE_M72",2];
 	};
-	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
+	default { hintC format["Equipment %1 not found for %2", _loadout, _unit] };
 };

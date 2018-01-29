@@ -11,8 +11,8 @@ class Extended_PostInit_EventHandlers {
 	};
 };
 
-MAMaS_version = 42;
-MAMaS_edition = "Solar";
+MAMaS_version = 44;
+MAMaS_edition = "Overmass";
 respawn = 1;
 respawndelay = 3;
 class Header	{

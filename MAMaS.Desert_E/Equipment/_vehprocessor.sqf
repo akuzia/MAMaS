@@ -9,7 +9,10 @@ _common_processor = {
 	clearWeaponCargo _veh;
 	clearMagazineCargo _veh;
 	//_this disableTIEquipment true;
-	_this addMagazineCargo ["ACE_Rope_TOW_M_5",1];
+	
+	if ((_veh isKindOf "LandVehicle") && !(_veh isKindOf "Building")) then {
+        _this addMagazineCargo ["ACE_Rope_TOW_M_5",1];
+    };
 };
 _addTyre = {
 	_veh = _this;

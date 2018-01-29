@@ -18,5 +18,5 @@ switch _loadout do {
 		_veh addWeaponCargo ["ACE_RPG22",2];
 		_veh addWeaponCargo ["ACE_P159_RD54",1];
 	};
-	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
+	default { hintC format["Equipment %1 not found for %2", _loadout, _unit] };
 };

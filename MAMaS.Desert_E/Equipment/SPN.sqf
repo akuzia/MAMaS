@@ -289,5 +289,5 @@ switch _loadout do {
 		addWeapons ["AKS_74_U","Makarov"];
 		addItems ["R","N","M","G"];
 	};
-	default { hintC format["Equipment %1 not found for %2", _type, _unit] };
+	default { hintC format["Equipment %1 not found for %2", _loadout, _unit] };
 };
