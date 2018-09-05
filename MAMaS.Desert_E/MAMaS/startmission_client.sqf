@@ -8,15 +8,25 @@ if (missionNameSpace getVariable ["warbegins", 0] == 0) then {
 
 [] call compile preprocessFileLineNumbers "MAMaS\scripts\briefing.sqf";
 
-waitUntil {sleep 0.319; !isNil "warbegins"};
-
 ["Loading player..."] call FNC(Status);
 waitUntil { player == player };
 
+["Waiting warbegins data..."] call FNC(Status);
+waitUntil {sleep 0.01; !isNil "warbegins"};
+
+["Variables/Sumulation"] call FNC(Status);
 // VARIABLES
-openMap [true,true];
+//openMap [true,true]; // Временно отключено, т.к. симуляция в любом случае ограничивает игрока
 player enableSimulation false;
 
+["UAV Introduction..."] call FNC(Status);
+// UAV Introduction
+_uavIntro = getNumber (MissionConfigFile >> "MAMaS_const" >> "uavIntro");
+if ((warbegins == 0) && (_uavIntro == 1)) then {
+	[player, 150, 150, 250] spawn FNC(UavView);
+};
+
+["Hard freeze"] call FNC(Status);
 // Hard Freeze (также включает симуляцию)
 [] execVM "MAMaS\Scripts\cli_hardFreeze.sqf";
 
@@ -28,6 +38,7 @@ _vehFiredList = [];
 
 setViewDistance ((getNumber (missionConfigFile >> "MAMaS_const" >> "viewDistance")) min 3500);
 
+["Set mission conditions"] call FNC(Status);
 if (!(alive _player)) exitWith {
 	[] call FNC(SetMissionConditions);
 };
@@ -64,7 +75,7 @@ if (warbegins == 0) then {
 	[] spawn FNC(VehicleFreeze);
 	//// IMPORTANT SCRIPTS END
 
-	openMap [false,false];
+	//openMap [false,false];
 	//_veh enableSimulation true;
 	
 	[] spawn FNC(MarkersLoop);
@@ -115,7 +126,7 @@ if (warbegins == 0) then {
 } else { // STARTED WITH WARBEGINS == 1
 	if (GVAR(MARKERS_STARTED,false)) then { [] spawn FNC(MarkersLoop) };
 	[""] call FNC(Status);
-	openMap [false,false];
+	//openMap [false,false];
 	//_veh enableSimulation true;
 };
 

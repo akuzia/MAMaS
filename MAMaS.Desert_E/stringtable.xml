@@ -5,53 +5,43 @@
 		<!-- Название миссии -->
 		<Key ID="STR_missionname">
 			<Original>
-			Please wait...
+			Название миссии
 			</Original>
 		</Key> 
-		<!-- информация для всех -->
-		<Key ID="brief">
+		<!-- Автор миссии -->
+		<Key ID="STR_credits">
 			<Original>
-			Краткое описание миссии
-			</Original>
-		</Key> 
-		<Key ID="changes">
-			<Original>
-			изменения в миссии
-			</Original>
-		</Key> 
-		<Key ID="credits">
-			<Original>
-			Автор миссии:&lt;br/&gt;
+			Имя автора
 			</Original>
 		</Key>
-		<Key ID="convent">
+		<Key ID="STR_convent">
 			<Original>
 			Описание работы триггеров и т.п.
 			</Original>
 		</Key>
 	<!-- информация для прессы -->
-		<Key ID="situation_tv">
+		<Key ID="STR_situation_tv">
 			<Original>
 			Описание ситуации для прессы.
 			</Original>
 		</Key>
 		<!-- информация для bluefor -->
-		<Key ID="situation_bf">
+		<Key ID="STR_situation_bf">
 			<Original>
 			Описание ситуации для синей стороны.
 			</Original>
 		</Key>
-		<Key ID="task_bf">
+		<Key ID="STR_task_bf">
 			<Original>
 			Задачи для синей стороны.
 			</Original>
 		</Key>
-		<Key ID="execution_bf">
+		<Key ID="STR_execution_bf">
 			<Original>
 			Выполнение для синей стороны.
 			</Original>
 		</Key>
-		<Key ID="machinery_bf">
+		<Key ID="STR_machinery_bf">
 			<Original>
 			Вооружение синей стороны.
 			&lt;br/&gt;&lt;br/&gt;Пример:
@@ -68,23 +58,23 @@
 			&lt;br/&gt;&lt;br/&gt;
 			</Original>
 		</Key>
-		<Key ID="enemy_bf">
+		<Key ID="STR_enemy_bf">
 			<Original>
 			Информация о противнике для синей стороны.
 			</Original>
 		</Key>
 		<!-- информация для redfor -->
-		<Key ID="situation_rf">
+		<Key ID="STR_situation_rf">
 			<Original>
 			Описание ситуации для красной стороны.
 			</Original>
 		</Key>
-		<Key ID="task_rf">
+		<Key ID="STR_task_rf">
 			<Original>
 			Задачи для красной стороны.
 			</Original>
 		</Key>
-		<Key ID="machinery_rf">
+		<Key ID="STR_machinery_rf">
 			<Original>
 			Вооружение красной стороны.
 			&lt;br/&gt;&lt;br/&gt;Пример:
@@ -104,72 +94,72 @@
 			&lt;br/&gt;всего в штурмовых группах 48 человек
 			</Original>
 		</Key>
-		<Key ID="execution_rf">
+		<Key ID="STR_execution_rf">
 			<Original>
 			Выполнение для красной стороны.
 			</Original>
 		</Key>
-		<Key ID="enemy_rf">
+		<Key ID="STR_enemy_rf">
 			<Original>
 			Информация о противнике для красной стороны.
 			</Original>
 		</Key>
 		<!-- информация для независимых -->
-		<Key ID="situation_guer">
+		<Key ID="STR_situation_guer">
 			<Original>
 			Описание ситуации для независимых.
 			</Original>
 		</Key>
-		<Key ID="task_guer">
+		<Key ID="STR_task_guer">
 			<Original>
 			Задачи для независимых.
 			</Original>
 		</Key>
-		<Key ID="machinery_guer">
+		<Key ID="STR_machinery_guer">
 			<Original>
 			Вооружение независимых.
 			</Original>
 		</Key>
-		<Key ID="execution_guer">
+		<Key ID="STR_execution_guer">
 			<Original>
 			Выполнение для независимых.
 			</Original>
 		</Key>
-		<Key ID="enemy_guer">
+		<Key ID="STR_enemy_guer">
 			<Original>
 			Информация о противнике для независимых.
 			</Original>
 		</Key>
 		<!-- заголовки в заметках -->
-		<Key ID="groups_title">
+		<Key ID="STR_groups_title">
 			<Original>Squads</Original>
 			<Russian>Отряды</Russian>
 		</Key>
-		<Key ID="credits_title">
+		<Key ID="STR_credits_title">
 			<Original>Credits</Original>
 			<Russian>Авторы</Russian>
 		</Key>
-		<Key ID="situation_title">
+		<Key ID="STR_situation_title">
 			<Original>Overview</Original>
 			<Russian>Общее положение дел</Russian>
 		</Key>
-		<Key ID="task_title">
+		<Key ID="STR_task_title">
 			<Original>Tasks</Original>
 			<Russian>Поставленная задача</Russian>
 		</Key>
-		<Key ID="execution_title">
+		<Key ID="STR_execution_title">
 			<Original>Execution</Original>
 			<Russian>Исполнение</Russian>
 		</Key>
-		<Key ID="machinery_title">
+		<Key ID="STR_machinery_title">
 			<Original>Weapons and vehicles</Original>
 			<Russian>Техника и вооружение</Russian>
 		</Key>
-		<Key ID="enemy_title">
+		<Key ID="STR_enemy_title">
 			<Original>Enemy Intel</Original>
 			<Russian>Противник</Russian>
 		</Key>
-		<Key ID="convent_title">
+		<Key ID="STR_convent_title">
 			<Original>Conventionalities</Original>
 			<Russian>Условности</Russian>
 		</Key>
@@ -500,6 +490,11 @@
 			<Original>Hard Freeze disabled</Original>
 			<Russian>Hard Freeze отключен</Russian>
 		</Key>
+		<Key ID="STR_Press_Space">
+			<English>PRESS SPACE TO CONTINUE</English>
+			<Russian>НАЖМИТЕ ПРОБЕЛ ДЛЯ ПРОДОЛЖЕНИЯ</Russian>
+		</Key>
+		
     </Container>
   </Package>
 </Project>

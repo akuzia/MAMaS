@@ -1,1 +1,1 @@
-diag_log (_this select 0); //titleText [_this select 0, "PLAIN DOWN"];
+diag_log format["[%1] %2", time, _this select 0];

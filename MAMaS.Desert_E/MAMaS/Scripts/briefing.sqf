@@ -10,7 +10,7 @@ _version = getNumber(missionConfigFile >> "MAMaS_version");
 if (_version==0) then { _version = getText(missionConfigFile >> "MAMaS_version") } else { _version = "v"+str(_version) };
 _edition = getText (missionConfigFile >> "MAMaS_edition");
 if (_edition == "") then { _edition = "ERROR!" };
-_cred = player createDiaryRecord ["diary", [localize "credits_title",format ["%1 <br/>MAMaS %2 (Редакция: %3)<br/>Оригинальная идея SerP: conKORD<br/>Переработка и поддержка: Blender",localize "credits",_version,_edition]]];
+_cred = player createDiaryRecord ["diary", [localize "STR_credits_title",format ["Автор миссии: %1 <br/><br/>MAMaS %2 (Редакция: %3)<br/>Оригинальная идея SerP: conKORD<br/>Переработка и поддержка: Blender",localize "STR_credits",_version,_edition]]];
 //отобразит игроков стороны в отрядах
 _grpText = "";
 _groupsArray = [];
@@ -51,10 +51,10 @@ for "_i" from 0 to ((count _groupsArray) - 1) do {
 	};
 };
 
-_groups = player createDiaryRecord ["diary", [localize "groups_title",_grpText]];
+_groups = player createDiaryRecord ["diary", [localize "STR_groups_title",_grpText]];
 
 //условности, одни на всех
-if (localize "convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "convent_title",localize "convent"]];};
+if (localize "STR_convent" != "") then {_cond = player createDiaryRecord ["diary", [localize "STR_convent_title",localize "STR_convent"]];};
 //погода из настроек миссии
 
 _hour = date select 3;
@@ -89,36 +89,36 @@ switch true do {
 		{if ((_x select 1)!="") then {
 			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
 		}} forEach [
-			[localize "machinery_title",(localize "machinery_rf")],
-			[localize "enemy_title",localize "enemy_rf"],
-			[localize "execution_title",localize "execution_rf"],
-			[localize "task_title",localize "task_rf"],
-			[localize "situation_title",localize "situation_rf"]
+			[localize "STR_machinery_title",(localize "STR_machinery_rf")],
+			[localize "STR_enemy_title",localize "STR_enemy_rf"],
+			[localize "STR_execution_title",localize "STR_execution_rf"],
+			[localize "STR_task_title",localize "STR_task_rf"],
+			[localize "STR_situation_title",localize "STR_situation_rf"]
 		];
 	};
 	case (_unitside == west): {
 		{if ((_x select 1)!="") then {
 			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
 		};} forEach [
-			[localize "machinery_title",(localize "machinery_bf")],
-			[localize "enemy_title",localize "enemy_bf"],
-			[localize "execution_title",localize "execution_bf"],
-			[localize "task_title",localize "task_bf"],
-			[localize "situation_title",localize "situation_bf"]
+			[localize "STR_machinery_title",(localize "STR_machinery_bf")],
+			[localize "STR_enemy_title",localize "STR_enemy_bf"],
+			[localize "STR_execution_title",localize "STR_execution_bf"],
+			[localize "STR_task_title",localize "STR_task_bf"],
+			[localize "STR_situation_title",localize "STR_situation_bf"]
 		];
 	};
 	case (_unitside == resistance): {
 		{if ((_x select 1)!="") then {
 			player createDiaryRecord ["diary", [(_x select 0),(_x select 1)]]
 		};} forEach [
-			[localize "machinery_title",(localize "machinery_guer")],
-			[localize "enemy_title",localize "enemy_guer"],
-			[localize "execution_title",localize "execution_guer"],
-			[localize "task_title",localize "task_guer"],
-			[localize "situation_title",localize "situation_guer"]
+			[localize "STR_machinery_title",(localize "STR_machinery_guer")],
+			[localize "STR_enemy_title",localize "STR_enemy_guer"],
+			[localize "STR_execution_title",localize "STR_execution_guer"],
+			[localize "STR_task_title",localize "STR_task_guer"],
+			[localize "STR_situation_title",localize "STR_situation_guer"]
 		];
 	};
 	default {//цивилы
-		_mis = player createDiaryRecord ["diary", [localize "situation_title", localize "situation_tv"]];
+		_mis = player createDiaryRecord ["diary", [localize "STR_situation_title", localize "STR_situation_tv"]];
 	};
 };

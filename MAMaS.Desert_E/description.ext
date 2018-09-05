@@ -17,4 +17,5 @@ class Params {
 
 class RscTitles {
 	#include "Dialogs\rsc_counter.hpp"
+	#include "Dialogs\blnd_uav.hpp"
 };

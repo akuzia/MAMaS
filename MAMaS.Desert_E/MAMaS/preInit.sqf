@@ -37,6 +37,11 @@ if (!isDedicated) then {
 	FNC(GetSideString) = compile preprocessFileLineNumbers "MAMaS\Functions\fn_GetSideString.sqf";
 	FNC(SpawnBorder) = compile preprocessFileLineNumbers "MAMaS\Functions\fn_cli_SpawnBorder.sqf";
 	FNC(TeleportPlayer) = compile preprocessFileLineNumbers "MAMaS\Functions\fn_cli_TeleportPlayer.sqf";
+	FNC(UavView) = compile preprocessFileLineNumbers "MAMaS\Functions\fn_cli_UavView.sqf";
+	
+	BIS_fnc_rscLayer = compile preprocessFileLineNumbers "MAMaS\BIS_Functions\fn_rscLayer.sqf";
+	BIS_fnc_param = compile preprocessFileLineNumbers "MAMaS\BIS_Functions\fn_param.sqf";
+	
 	MAMaS_server_message = "";
 	"MAMaS_server_message" addPublicVariableEventHandler {hint (_this select 1)};
 	MAMaS_taskhint = "";
