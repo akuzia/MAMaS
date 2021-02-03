@@ -1,6 +1,7 @@
 /*
 	Функция контроля экипажа техники.
 	Автор: Dimon UA
+	Адаптировал для воздушной техники: Kuzia
 	
 	Параметры:
 		0. _this - по умолчанию
@@ -24,13 +25,18 @@
 		if (!isDedicated) then {
   			relCrew = [];
   			relCommander = [];
+			relPilot = [];
   		};	
 */
 
 #define CfgAir (configFile >> "CfgVehicles" >>(typeOf _unitToCheck) >> "ace_ispilot")
 #define CfgVeh (configFile >> "CfgVehicles" >>(typeOf _unitToCheck) >> "ace_iscrew")
 #define allCrew typeOf _unitToCheck in arrRelCrew
-#define isCrew ((_vehicle isKindOf "landvehicle" && (getNumber CfgVeh == 1 || typeOf _unitToCheck in arrRelCommander)) || (_vehicle isKindOf "air" && getNumber CfgAir == 1) || allCrew)
+#define allCommanders typeOf _unitToCheck in arrRelCommander
+#define allPilots typeOf _unitToCheck in arrRelPilot
+#define isCrew (_vehicle isKindOf "landvehicle" && (getNumber CfgVeh == 1 || allCrew))
+#define isPilot (_vehicle isKindOf "air" && (getNumber CfgAir == 1 || allPilots))
+#define CommanderVeh ["Wheeled_APC","Tracked_APC","m113_Base","M2A2_Base","TU_BTRD","TU_MTLBVM","TU_MTLBV_ZU23","BAF_FV510_D"]
 
 fnc_CrewControl = {
 	private ["_typeIn", "_place", "_veh", "_move", "_warningMsgPlace"];
@@ -67,7 +73,7 @@ fnc_CrewControl = {
 };
 
 fnc_inCrewFilter = {
-	private ["_fromEH", "_type", "_vehicle", "_unitToCheck", "_balca", "_balcaPower", "_side", "_warningMsgCrew", "_warningMsgSide", "_state"];
+	private ["_fromEH", "_type", "_vehicle","_commanderVehicle", "_unitToCheck", "_balca", "_balcaPower", "_side", "_warningMsgCrew", "_warningMsgSide", "_state"];
 
 	_fromEH = _this select 0;
 	_type = _this select 1;
@@ -77,6 +83,8 @@ fnc_inCrewFilter = {
 	_side = _this select 3;
 	_balcaPower = false;
 	_exit = false;
+	_commanderVehicle = false;
+
 	if (isNil {_vehicle getVariable "CREW_GETININDEX"}) then {_vehicle setVariable ["CREW_GETININDEX", _type, true];};
 
 	if !(local _unitToCheck) exitWith {};
@@ -85,10 +93,15 @@ fnc_inCrewFilter = {
 
 	if (count(_side)>0 && {!(toLower(str(side(group _unitToCheck))) in _side)}) exitwith {moveOut _unitToCheck; hint format ["%1",_warningMsgSide];};
 
-	//====================================================================
 	call {
-		if (((_type != 7) && isCrew) || {((_type == 7) && {allCrew})}) exitwith {_balcaPower = (_unitToCheck == gunner _vehicle)}; 
+		for "_i" from 0 to (count CommanderVeh - 1) do {
+			if (_vehicle isKindOf (CommanderVeh select _i)) then {
+				_i = (count CommanderVeh) - 1;
+				_commanderVehicle = true;
+			};
+		};
 
+		if ((isCrew) || {(isPilot)} || (_commanderVehicle && {allCommanders})) exitwith {_balcaPower = (_unitToCheck == gunner _vehicle)}; 
 		_exit = (_unitToCheck == driver _vehicle && {_type in [0,2,3,5]})
 		|| {_unitToCheck == gunner _vehicle && {_type in [1,2,4,5]}}
 		|| {_unitToCheck == commander _vehicle && {_type in [3,4,5,6]}}
@@ -168,7 +181,7 @@ KK_fnc_isEqual = {
 	};
 };
 
-private ["_object", "_closePos", "_result", "_side", "_balca"];
+private ["_object", "_closePos", "_side", "_balca"];
 
 _object = _this select 0;
 _closePos = objnull;
@@ -204,4 +217,4 @@ _object setVariable ["TRUESIDE", _side, true];
 _object setVariable ["BalCaReq", _balca, true];
 
 _object addEventHandler ["GetIn",{[_this,(_this select 0) getVariable "BLOCKPOS",(_this select 0) getVariable "BalCaReq",(_this select 0) getVariable "TRUESIDE"] call fnc_inCrewFilter}];
-_object addEventHandler ["killed",{_this removeAllEventHandlers "Getin";_this removeAllEventHandlers "killed"}];
+_object addEventHandler ["killed",{(_this select 0) removeAllEventHandlers "Getin";(_this select 0) removeAllEventHandlers "killed"}];
