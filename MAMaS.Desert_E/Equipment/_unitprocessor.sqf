@@ -23,6 +23,7 @@ _item_processor = {
 };
 _med_processor = {
 	_this addMagazine "ACE_Morphine";
+	_this addMagazine "ACE_Morphine";
 	_this addMagazine "ACE_Epinephrine";
 	_this addMagazine "ACE_Bandage";
 	_this addMagazine "ACE_Bandage";
